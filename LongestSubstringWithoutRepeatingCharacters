@@ -1,0 +1,42 @@
+#Python 3 Code
+#LeetCode Problem Longest Substring Without Repeating Characters
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        #Original Approach
+
+        #memoryList = []
+        #maxSub = 0
+        #while len(s) != 0:
+            
+            #if s[0] in memoryList:
+                #memoryList = memoryList[memoryList.index(s[0])+1:]
+                
+            
+            #memoryList.append(s[0])
+            #if len(memoryList) > maxSub:
+                #maxSub = len(memoryList)
+            
+            
+            #s = s[1:]
+            
+        
+        #return maxSub
+        
+        #Second Approach After Studying Official Solution
+
+        #memoryDict = {}
+        #maxLength = start = 0
+        
+        #for index, char in enumerate(s):
+            #if char in memoryDict:
+                #preIndex = memoryDict[char] +1
+                #if preIndex > start:
+                    #start = preIndex
+            #currLength = index -start +1
+            #if currLength > maxLength:
+                #maxLength = currLength
+                
+            #memoryDict[char] = index
+            
+        #return maxLength
