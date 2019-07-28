@@ -1,0 +1,41 @@
+#Solution 1:
+#Storage Efficiency is poor
+def isValid(self, s: str) -> bool:
+        
+        containList = []
+        def isFront(s):
+            if s == '[' or s == '{' or s == '(':
+                return True
+            else:
+                return False
+            
+        def isReverse(a,b) :
+            if a == '[':
+                if b == ']':
+                    return True
+                else:
+                    return False
+            elif a == '{':
+                if b == '}' :
+                    return True
+                else:
+                    return False
+            elif a == '(':
+                if b == ')':
+                    return True
+                else :
+                    return False
+        for x in s:
+            if isFront(x) :
+                containList.append(x)
+            else:
+                if len(containList) == 0:
+                    return False
+                if not isReverse(containList.pop(),x):
+                    return False
+        
+        if len(containList) == 0:
+            
+            return True
+        else:
+            return False
